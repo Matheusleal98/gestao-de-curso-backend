@@ -1,6 +1,7 @@
 CREATE TABLE tb_aluno (
-    id BIGSERIAL PRIMARY KEY,
-    nome VARCHAR(100),
-    email VARCHAR(100),
-    dt_nascimento VARCHAR(10)
+                          id SERIAL PRIMARY KEY,
+                          ra INTEGER NOT NULL,
+                          nome VARCHAR(255) NOT NULL,
+                          email VARCHAR(255) NOT NULL,
+                          data_de_nascimento DATE NOT NULL
 );
