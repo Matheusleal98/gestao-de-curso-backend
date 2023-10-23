@@ -12,17 +12,16 @@ class AlunoService {
     @Autowired
     private lateinit var alunoRepository: AlunoRepository
 
-    fun criarAluno(dto: AlunoDTO): Aluno {
-        val aluno = mapperTo(dto)
-        return alunoRepository.save(aluno)
-    }
-
     private fun mapperTo(dto: AlunoDTO): Aluno {
         val aluno = Aluno()
+        aluno.ra = dto.ra
         aluno.nome = dto.nome
         aluno.email = dto.email
-        aluno.dt_nascimento = dto.dt_nascimento
-        aluno.ra = dto.ra
+        aluno.dtNascimento = dto.dtNascimento
         return aluno
+    }
+
+    fun listarAlunosCadastrados(): MutableList<Aluno> {
+        return alunoRepository.findAll()
     }
 }
