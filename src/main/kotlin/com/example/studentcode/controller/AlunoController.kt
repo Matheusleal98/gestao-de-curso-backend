@@ -21,12 +21,12 @@ class AlunoController {
 
     @DeleteMapping("/{id}")
     fun deletarAluno(@PathVariable id: Long) {
-        return alunoService.deletarAluno(id)
+        alunoService.deletarAluno(id)
     }
 
     @PutMapping("/edit/{id}")
     fun editarAluno(@RequestBody aluno: Aluno, @PathVariable id: Long) {
-        return editarAluno(aluno, id)
+        alunoService.editarAluno(aluno,id)
     }
 
     @GetMapping

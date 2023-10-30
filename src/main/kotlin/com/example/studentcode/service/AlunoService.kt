@@ -47,10 +47,9 @@ class AlunoService {
                 alunoRepository.save(existeAluno)
             }
             .orElseGet {
-                val novoAluno = Aluno()
-                novoAluno.id = id
+                aluno.id = id
                 this.obterCadastroAluno(aluno)
-                alunoRepository.save(novoAluno)
+                alunoRepository.save(aluno)
             }
     }
 
